@@ -1,3 +1,4 @@
+import 'package:app_vendas/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class InitPage extends StatelessWidget {
@@ -7,7 +8,7 @@ class InitPage extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 55),
         decoration: BoxDecoration(
-          color: Color(0xFF2D8E8B),
+          color: AppColors.primary,
         ),
         child: Center(
           child: Container(
@@ -32,7 +33,7 @@ class InitPage extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {},
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF2D8E8B)),
+                          backgroundColor: MaterialStateProperty.all<Color>(AppColors.primary),
                         ),
                         child: Text(
                           "SE CADASTRAR",
@@ -42,7 +43,7 @@ class InitPage extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {},
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF2D8E8B)),
+                          backgroundColor: MaterialStateProperty.all<Color>(AppColors.primary),
                         ),
                         child: Text(
                           "FAZER LOGIN",
