@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
         ),
         child: Center(
           child: Container(
-            padding: const EdgeInsets.all(25),
+            padding: const EdgeInsets.all(40),
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -20,6 +20,7 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             child: ListView(
+              padding: const EdgeInsets.all(0),
               children: <Widget>[
                 Container(
                   padding: const EdgeInsets.only(bottom: 60),
