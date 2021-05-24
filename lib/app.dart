@@ -1,5 +1,6 @@
-// import 'package:app_vendas/pages/init_page.dart';
-// import 'package:app_vendas/pages/login_page.dart';
+import 'package:app_vendas/layouts/default_layout.dart';
+import 'package:app_vendas/pages/init_page.dart';
+import 'package:app_vendas/pages/login_page.dart';
 import 'package:app_vendas/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'App de Vendas',
-      home: SignupPage(),
+      home: DefaultLayout(),
     );
   }
 }
