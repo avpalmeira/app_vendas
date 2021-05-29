@@ -1,35 +1,47 @@
 import 'package:app_vendas/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
-
 class DefaultLayout extends StatefulWidget {
   @override
   _DefaultLayoutState createState() => _DefaultLayoutState();
 }
 
 class _DefaultLayoutState extends State<DefaultLayout> {
-
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =  TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.bold,
-  );
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Dashboard',
-      style: optionStyle,
+  static List<Widget> _widgetOptions = <Widget>[
+    // Dashboard
+    Padding(
+      padding: const EdgeInsets.all(30),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(
+            width: 2,
+            color: Colors.black54,
+          ),
+        ),
+        child: Center(
+          child: Text('Dashboard'),
+        ),
+      ),
     ),
-    Text(
-      'Index 1: Clientes',
-      style: optionStyle,
+    // Clientes
+    Container(
+      child: Center(
+        child: Text('Clientes'),
+      ),
     ),
-    Text(
-      'Index 2: Pedidos',
-      style: optionStyle,
+    // Pedidos
+    Container(
+      child: Center(
+        child: Text('Pedidos'),
+      ),
     ),
-    Text(
-      'Index 3: Produtos',
-      style: optionStyle,
+    // Produtos
+    Container(
+      child: Center(
+        child: Text('Produtos'),
+      ),
     ),
   ];
 
@@ -47,43 +59,44 @@ class _DefaultLayoutState extends State<DefaultLayout> {
         backgroundColor: AppColors.primary,
       ),
       backgroundColor: AppColors.background,
-      body: Padding(
-        padding: const EdgeInsets.all(30),
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(
+      body: _widgetOptions.elementAt(_selectedIndex),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              width: 2,
               color: Colors.black54,
             ),
           ),
-          child: Center(
-            child: Text('Dashboard'),
-          ),
-        ),//_widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bar_chart_outlined),
-            label: 'Dashboard',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Clientes',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.star),
-            label: 'Pedidos',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
-            label: 'Produtos',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: AppColors.primary,
-        unselectedItemColor: Colors.black54,
-        onTap: _onItemTapped,
+        ),
+        child: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bar_chart_outlined),
+              label: 'Dashboard',
+              backgroundColor: AppColors.primary,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: 'Clientes',
+              backgroundColor: AppColors.primary,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.star),
+              label: 'Pedidos',
+              backgroundColor: AppColors.primary,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart_outlined),
+              label: 'Produtos',
+              backgroundColor: AppColors.primary,
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.black54,
+          onTap: _onItemTapped,
+        ),
       ),
     );
   }
