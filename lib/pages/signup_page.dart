@@ -1,5 +1,5 @@
-import 'package:app_vendas/core/app_colors.dart';
-import 'package:app_vendas/core/app_images.dart';
+import 'package:app_vendas/resources/app_colors.dart';
+import 'package:app_vendas/resources/app_images.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {
