@@ -1,4 +1,5 @@
 import 'package:app_vendas/core/app_colors.dart';
+import 'package:app_vendas/core/app_images.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {
@@ -27,7 +28,7 @@ class SignupPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/images/logo-small.jpg',
+                        AppImages.logo,
                         height: 40,
                         width: 40,
                       ),
@@ -49,36 +50,30 @@ class SignupPage extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         TextFormField(
-                          decoration: const InputDecoration(
-                              hintText: 'Nome Completo'
-                          ),
+                          decoration:
+                              const InputDecoration(hintText: 'Nome Completo'),
+                        ),
+                        TextFormField(
+                          decoration:
+                              const InputDecoration(hintText: 'Telefone'),
+                        ),
+                        TextFormField(
+                          decoration: const InputDecoration(hintText: 'E-mail'),
+                        ),
+                        TextFormField(
+                          decoration: const InputDecoration(hintText: 'Senha'),
                         ),
                         TextFormField(
                           decoration: const InputDecoration(
-                              hintText: 'Telefone'
-                          ),
-                        ),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                              hintText: 'E-mail'
-                          ),
-                        ),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                              hintText: 'Senha'
-                          ),
-                        ),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                              hintText: 'Código da Empresa'
-                          ),
+                              hintText: 'Código da Empresa'),
                         ),
                         Container(
                           padding: const EdgeInsets.only(top: 40),
                           child: ElevatedButton(
                             onPressed: () {},
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(AppColors.primary),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  AppColors.primary),
                             ),
                             child: Text(
                               'FINALIZAR',

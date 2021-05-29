@@ -1,4 +1,5 @@
 import 'package:app_vendas/core/app_colors.dart';
+import 'package:app_vendas/core/app_images.dart';
 import 'package:flutter/material.dart';
 
 class DefaultLayout extends StatefulWidget {
@@ -21,28 +22,35 @@ class _DefaultLayoutState extends State<DefaultLayout> {
           ),
         ),
         child: Center(
-          child: Text('Dashboard'),
+          child: Text(_titleOptions[0]), //temp
         ),
       ),
     ),
     // Clientes
     Container(
       child: Center(
-        child: Text('Clientes'),
+        child: Text(_titleOptions[1]), //temp
       ),
     ),
     // Pedidos
     Container(
       child: Center(
-        child: Text('Pedidos'),
+        child: Text(_titleOptions[2]), //temp
       ),
     ),
     // Produtos
     Container(
       child: Center(
-        child: Text('Produtos'),
+        child: Text(_titleOptions[3]), //temp
       ),
     ),
+  ];
+
+  static List<String> _titleOptions = [
+    'Dashboard',
+    'Clientes',
+    'Pedidos',
+    'Produtos',
   ];
 
   void _onItemTapped(int index) {
@@ -55,8 +63,20 @@ class _DefaultLayoutState extends State<DefaultLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('App de vendas'),
-        backgroundColor: AppColors.primary,
+        leading: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Image.asset(AppImages.logo),
+        ),
+        title: Text(
+          _titleOptions.elementAt(_selectedIndex),
+          style: TextStyle(
+            color: Colors.black54,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        shadowColor: Colors.black54,
       ),
       backgroundColor: AppColors.background,
       body: _widgetOptions.elementAt(_selectedIndex),
@@ -73,22 +93,22 @@ class _DefaultLayoutState extends State<DefaultLayout> {
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.bar_chart_outlined),
-              label: 'Dashboard',
+              label: _titleOptions[0],
               backgroundColor: AppColors.primary,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.business),
-              label: 'Clientes',
+              label: _titleOptions[1],
               backgroundColor: AppColors.primary,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.star),
-              label: 'Pedidos',
+              label: _titleOptions[2],
               backgroundColor: AppColors.primary,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart_outlined),
-              label: 'Produtos',
+              label: _titleOptions[3],
               backgroundColor: AppColors.primary,
             ),
           ],

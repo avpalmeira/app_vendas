@@ -1,4 +1,5 @@
 import 'package:app_vendas/core/app_colors.dart';
+import 'package:app_vendas/core/app_images.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -24,7 +25,7 @@ class LoginPage extends StatelessWidget {
               children: <Widget>[
                 Container(
                   padding: const EdgeInsets.only(bottom: 60),
-                  child: Image.asset('assets/images/logo.jpg'),
+                  child: Image.asset(AppImages.fullLogo),
                 ),
                 Container(
                   padding: const EdgeInsets.only(bottom: 60),
@@ -42,14 +43,10 @@ class LoginPage extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         TextFormField(
-                          decoration: const InputDecoration(
-                            hintText: 'E-mail'
-                          ),
+                          decoration: const InputDecoration(hintText: 'E-mail'),
                         ),
                         TextFormField(
-                          decoration: const InputDecoration(
-                              hintText: 'Senha'
-                          ),
+                          decoration: const InputDecoration(hintText: 'Senha'),
                         ),
                         Container(
                           padding: const EdgeInsets.only(top: 30),
@@ -82,7 +79,8 @@ class LoginPage extends StatelessWidget {
                           child: ElevatedButton(
                             onPressed: () {},
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(AppColors.primary),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  AppColors.primary),
                             ),
                             child: Text(
                               'ENTRAR',

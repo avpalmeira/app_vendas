@@ -1,4 +1,5 @@
 import 'package:app_vendas/core/app_colors.dart';
+import 'package:app_vendas/core/app_images.dart';
 import 'package:flutter/material.dart';
 
 class InitPage extends StatelessWidget {
@@ -22,9 +23,9 @@ class InitPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Image.asset("assets/images/logo.jpg"),
+                Image.asset(AppImages.fullLogo),
                 Text(
-                  "App de Vendas",
+                  'App de Vendas',
                   style: TextStyle(fontSize: 20),
                 ),
                 Container(
@@ -33,20 +34,22 @@ class InitPage extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {},
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(AppColors.primary),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              AppColors.primary),
                         ),
                         child: Text(
-                          "SE CADASTRAR",
+                          'SE CADASTRAR',
                           style: TextStyle(fontSize: 16),
                         ),
                       ),
                       ElevatedButton(
                         onPressed: () {},
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(AppColors.primary),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              AppColors.primary),
                         ),
                         child: Text(
-                          "FAZER LOGIN",
+                          'FAZER LOGIN',
                           style: TextStyle(fontSize: 16),
                         ),
                       ),
