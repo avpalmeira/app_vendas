@@ -1,5 +1,6 @@
 import 'package:app_vendas/components/app_bottom_nav.dart';
 import 'package:app_vendas/components/app_header.dart';
+import 'package:app_vendas/components/app_sidebar.dart';
 import 'package:app_vendas/resources/app_colors.dart';
 import 'package:app_vendas/sections/clientes_section.dart';
 import 'package:app_vendas/sections/dashboard_section.dart';
@@ -43,6 +44,7 @@ class _DefaultLayoutState extends State<DefaultLayout> {
         height: 60,
         statusBarHeight: 20, //kToolbarHeight
       ),
+      drawer: AppSidebar(),
       backgroundColor: AppColors.background,
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: AppBottomNav(
