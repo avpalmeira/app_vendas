@@ -14,7 +14,7 @@ class DefaultLayout extends StatefulWidget {
 }
 
 class _DefaultLayoutState extends State<DefaultLayout> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
 
   static List<Widget> _widgetOptions = <Widget>[
     DashboardSection(),
