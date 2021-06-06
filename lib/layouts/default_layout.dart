@@ -1,11 +1,13 @@
 import 'package:app_vendas/components/app_bottom_nav.dart';
 import 'package:app_vendas/components/app_header.dart';
 import 'package:app_vendas/components/app_sidebar.dart';
+import 'package:app_vendas/models/current_view_model.dart';
 import 'package:app_vendas/resources/app_colors.dart';
 import 'package:app_vendas/sections/clientes_section.dart';
 import 'package:app_vendas/sections/dashboard_section.dart';
 import 'package:app_vendas/sections/pedidos_section.dart';
 import 'package:app_vendas/sections/produtos_section.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class DefaultLayout extends StatefulWidget {
@@ -14,8 +16,6 @@ class DefaultLayout extends StatefulWidget {
 }
 
 class _DefaultLayoutState extends State<DefaultLayout> {
-  int _selectedIndex = 2;
-
   static List<Widget> _widgetOptions = <Widget>[
     DashboardSection(),
     ClientesSection(),
@@ -30,26 +30,21 @@ class _DefaultLayoutState extends State<DefaultLayout> {
     'Produtos',
   ];
 
-  /* void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  } */
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppHeader(
-        title: _titleOptions.elementAt(_selectedIndex),
-        height: 60,
-        statusBarHeight: 20, //kToolbarHeight
-      ),
-      drawer: AppSidebar(),
-      backgroundColor: AppColors.background,
-      body: _widgetOptions.elementAt(_selectedIndex),
-      bottomNavigationBar: AppBottomNav(
-        titleOptions: _titleOptions,
-        selectedIndex: _selectedIndex,
+    return Consumer<CurrentViewModel>(
+      builder: (context, currentView, child) => Scaffold(
+        appBar: AppHeader(
+          title: _titleOptions.elementAt(currentView.index),
+          height: 60,
+          statusBarHeight: 20, //kToolbarHeight
+        ),
+        drawer: AppSidebar(),
+        backgroundColor: AppColors.background,
+        body: _widgetOptions.elementAt(currentView.index),
+        bottomNavigationBar: AppBottomNav(
+          titleOptions: _titleOptions,
+        ),
       ),
     );
   }

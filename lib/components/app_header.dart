@@ -11,7 +11,7 @@ class AppHeader extends PreferredSize {
               color: Colors.white,
               border: Border(
                 bottom: BorderSide(
-                  width: 1,
+                  width: 2,
                   color: Colors.black54,
                 ),
               ),

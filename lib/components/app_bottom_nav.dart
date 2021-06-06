@@ -1,18 +1,20 @@
+import 'package:app_vendas/models/current_view_model.dart';
 import 'package:app_vendas/resources/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class AppBottomNav extends StatelessWidget {
   AppBottomNav({
     Key key,
     this.titleOptions,
-    this.selectedIndex,
   });
 
   final List<String> titleOptions;
-  final int selectedIndex;
 
   @override
   Widget build(BuildContext context) {
+    var currentView = context.read<CurrentViewModel>();
+
     return Container(
       decoration: BoxDecoration(
         border: Border(
@@ -45,7 +47,10 @@ class AppBottomNav extends StatelessWidget {
             backgroundColor: AppColors.primary,
           ),
         ],
-        currentIndex: selectedIndex,
+        onTap: (int index) {
+          currentView.selectIndex(index);
+        },
+        currentIndex: currentView.index,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.black54,
       ),
