@@ -3,19 +3,19 @@ import 'package:app_vendas/components/app_header.dart';
 import 'package:app_vendas/components/app_sidebar.dart';
 import 'package:app_vendas/models/current_view_model.dart';
 import 'package:app_vendas/resources/app_colors.dart';
-import 'package:app_vendas/sections/clientes_section.dart';
-import 'package:app_vendas/sections/dashboard_section.dart';
-import 'package:app_vendas/sections/pedidos_section.dart';
-import 'package:app_vendas/sections/produtos_section.dart';
+import 'package:app_vendas/sections/main/clientes_section.dart';
+import 'package:app_vendas/sections/main/dashboard_section.dart';
+import 'package:app_vendas/sections/main/pedidos_section.dart';
+import 'package:app_vendas/sections/main/produtos_section.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
-class DefaultLayout extends StatefulWidget {
+class MainPage extends StatefulWidget {
   @override
-  _DefaultLayoutState createState() => _DefaultLayoutState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _DefaultLayoutState extends State<DefaultLayout> {
+class _MainPageState extends State<MainPage> {
   static List<Widget> _widgetOptions = <Widget>[
     DashboardSection(),
     ClientesSection(),
