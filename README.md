@@ -1,6 +1,16 @@
-# app_vendas
+# Sales App
 
-App para gerenciamento de vendas de representantes
+Sales management app for sales representatives
+
+## Mock screens
+
+### Dashboard and sidebar
+
+<img alt="dashboard" src="docs/image-1.jpeg" width="600" />
+
+### Orders page
+
+<img alt="orders page" src="docs/image-2.jpeg" width="600" />
 
 ## Getting Started
 
